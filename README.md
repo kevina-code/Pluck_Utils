@@ -10,7 +10,7 @@ Extract the Account.CreatedBy.Id values from a list of Contacts:
 List<Contact> contacts = [SELECT Id, Account.CreatedBy.Id FROM Contact LIMIT 10];
 
 // pluck Account.CreatedBy.Id values from contacts:
-Set<Id> createdByIds = ApexUtils.pluckIdSet(contacts, 'Account.CreatedBy.Id'); 
+Set<Id> createdByIds = PluckUtils.pluckIdSet(contacts, 'Account.CreatedBy.Id'); 
 ```
 -----------------------
 Extract the Account.CreatedBy.Name values from a list of Contacts:
@@ -20,7 +20,7 @@ Extract the Account.CreatedBy.Name values from a list of Contacts:
 List<Contact> contacts = [SELECT Id, Account.CreatedBy.Name FROM Contact LIMIT 10];
 
 // pluck Account.CreatedBy.Name values from contacts:
-Set<String> createdByNames = ApexUtils.pluckStringSet(contacts, 'Account.CreatedBy.Name'); 
+Set<String> createdByNames = PluckUtils.pluckStringSet(contacts, 'Account.CreatedBy.Name'); 
 ```
 -----------------------
 Extract the Account.CreatedBy.Name values from a list of Contacts, while reducing the strain on heap size:
